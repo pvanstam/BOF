@@ -9,4 +9,6 @@ $app->get('/admin', function (Request $request, Response $response, array $args)
     ]);
 })->setName('admin');
 
+$app->get('/calculate_results', 'ICCM\BOF\Result:calculate_results')->setName('calculate_results');
+
 ?>
