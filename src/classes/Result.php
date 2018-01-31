@@ -46,7 +46,7 @@ class Result
         
         if (this.__clear_results()) {
             # next step
-            print "Clear results succeeded"
+            print "Clear results succeeded";
         }
      
     }
