@@ -19,10 +19,17 @@ class Result
     private $db;
     private $router;
  
+    function __construct($view, $db, $router, $secrettoken) {
+#        $this->view = $view;
+        $this->db = $db;
+#        $this->router = $router;
+#        $this->secrettoken = $secrettoken;
+    }
+    
     /*
      * Clear database fieds for rounds and locations
      */
-    function __clear_results() {
+    function clear_results() {
             $sql = 'UPDATE workshop
                     SET votes = (SELECT SUM(participant)
                                  FROM workshop_participant
@@ -44,7 +51,7 @@ class Result
     
     public function calculate_results($request, $response, $args) {
         
-        if ($this->__clear_results()) {
+        if ($this->clear_results()) {
             # next step
             print "Clear results succeeded";
         }
