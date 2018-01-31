@@ -44,7 +44,7 @@ class Result
     
     public function calculate_results($request, $response, $args) {
         
-        if (this.__clear_results()) {
+        if ($this->__clear_results()) {
             # next step
             print "Clear results succeeded";
         }
